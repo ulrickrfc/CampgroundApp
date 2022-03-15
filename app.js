@@ -1,3 +1,4 @@
+require('dotenv').config()
 var express    = require("express"),
 app            = express(),
 request        = require("request"),
@@ -9,9 +10,13 @@ User           = require("./models/user"),
 mongoose       = require('mongoose'),
 flash          = require("connect-flash");
 
+const dbUser = process.env.DB_USER
+const dbPassword = process.env.DB_PASS
+
 app.use(bodyParser.urlencoded({extended:true}));
-mongoose.connect("mongodb://localhost:27017/campgrounds",{ 
-    useNewUrlParser: true
+mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.soemo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,{ 
+    useNewUrlParser: true,
+	useUnifiedTopology:true
   }
 );
 

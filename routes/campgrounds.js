@@ -41,7 +41,6 @@ router.post("/", middlewareObj.isLoggedIn, function(req,res){
             console.log(err);
         }
         else{
-            console.log(novoCampground);
             res.redirect("/campgrounds"); 
         }
     })
