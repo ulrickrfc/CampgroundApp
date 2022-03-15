@@ -77,6 +77,6 @@ app.use("/campgrounds",campgroundsRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 
 
-app.listen(process.env.PORT || 8081,function(){
+app.listen(process.env.PORT,function(){
     console.log("o servidor está rodando na url http://localhost:8081")
 });
